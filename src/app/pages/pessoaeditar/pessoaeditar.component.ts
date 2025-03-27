@@ -25,7 +25,7 @@ export class PessoaeditarComponent {
   editarPessoa(pessoa: PessoaListar){
     pessoa.id = this.pessoa.id;  
     this.pessoaService.EditarPessoa(pessoa).subscribe(response => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/pessoahome']);
     });
   }
 

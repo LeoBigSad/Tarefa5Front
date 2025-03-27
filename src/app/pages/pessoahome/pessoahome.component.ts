@@ -31,8 +31,10 @@ export class PessoahomeComponent {
     }
     deletar(id: string | undefined){
       this.servicePessoa.DeletarPessoa(id).subscribe(response => {
-        window.location.reload()
+        this.servicePessoa.GetPessoas().subscribe(response =>{
+          this.pessoas = response;
+          this.pessoasGeral = response;
+        } )
       })
     }
-
 }

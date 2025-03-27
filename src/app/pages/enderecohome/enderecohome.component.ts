@@ -32,7 +32,11 @@ export class EnderecohomeComponent {
       }
       deletar(id: string | undefined){
         this.serviceEndereco.DeletarEndereco(id).subscribe(response => {
-          window.location.reload()
+          
+        this.serviceEndereco.GetEnderecos().subscribe(response =>{
+          this.enderecos = response;
+          this.enderecosGeral = response;
+        } )
         })
       }
 
