@@ -1,0 +1,32 @@
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4">Bem-vindo</h1>
+        <p class="lead">Selecione qual objeto quer manipular</p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-6">
+            <button class="btn btn-primary w-100 p-4" [routerLink]="['/pessoahome']" routerLinkActive="router-link-active">
+                <h3>Pessoas</h3>
+            </button>
+        </div>
+        
+        <div class="col-md-6">
+            <button class="btn btn-success w-100 p-4" [routerLink]="['/enderecohome']" routerLinkActive="router-link-active">
+                <h3>Endereços</h3>	
+            </button>
+        </div>
+
+        <div class="col-md-6">
+            <button class="btn btn-warning w-100 p-4" [routerLink]="['/academiahome']" routerLinkActive="router-link-active">
+                <h3>Academias</h3>
+            </button>
+        </div>
+
+        <div class="col-md-6">
+            <button class="btn btn-info w-100 p-4" [routerLink]="['/aparelhohome']" routerLinkActive="router-link-active">
+                <h3>Aparelhos</h3>
+            </button>
+        </div>
+    </div>
+</div>
