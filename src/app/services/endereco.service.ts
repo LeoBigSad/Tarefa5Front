@@ -7,9 +7,9 @@ import { EnderecoListar } from '../models/endereco';
 @Injectable({
   providedIn: 'root'
 })
-export class AparelhoService {
+export class EnderecoService {
 
-  ApiURL = environment.UrlAPI;
+  ApiURL = environment.EnderecoURL;
 
   constructor(private http : HttpClient) { }
 
@@ -22,6 +22,7 @@ export class AparelhoService {
     });
   }
   CriarEndereco(endereco: EnderecoListar): Observable<EnderecoListar>{
+    endereco.id = undefined;
     return this.http.post<EnderecoListar>(this.ApiURL, endereco);
   }
   GetEnderecoPorId(id: string): Observable<EnderecoListar> {

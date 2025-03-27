@@ -1,1 +1,8 @@
-<p>enderecoeditar works!</p>
+<div *ngIf="endereco">
+    <app-enderecoformulario 
+        [btnAcao]="btnAcao"
+        [descTitulo]="descTitulo"
+        [dadosEndereco]="endereco"
+        (onSubmit)="editarEndereco($event)">
+    </app-enderecoformulario>
+</div>

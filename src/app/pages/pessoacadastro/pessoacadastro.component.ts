@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { PessoaService } from '../../services/pessoa.service';
 import { PessoaListar } from '../../models/pessoa';
 import { Router } from '@angular/router';
-import { FormularioComponent } from "../../componentes/formulario/formulario.component";
+import { PessoaformularioComponent } from "../../componentes/pessoaformulario/pessoaformulario.component";
 
 @Component({
   selector: 'app-pessoacadastro',
   standalone: true, 
-  imports: [FormularioComponent],
+  imports: [PessoaformularioComponent],
   templateUrl: './pessoacadastro.component.html',
   styleUrl: './pessoacadastro.component.css'
 })

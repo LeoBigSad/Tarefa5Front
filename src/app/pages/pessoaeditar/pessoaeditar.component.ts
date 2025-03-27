@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormularioComponent } from "../../componentes/formulario/formulario.component";
 import { PessoaService } from '../../services/pessoa.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PessoaListar } from '../../models/pessoa';
 import { CommonModule } from '@angular/common';
+import { PessoaformularioComponent } from "../../componentes/pessoaformulario/pessoaformulario.component";
 
 @Component({
   selector: 'app-pessoaeditar',
-  imports: [FormularioComponent, CommonModule],
+  imports: [CommonModule, PessoaformularioComponent],
   templateUrl: './pessoaeditar.component.html',
   styleUrl: './pessoaeditar.component.css'
 })

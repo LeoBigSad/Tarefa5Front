@@ -1,5 +1,5 @@
 export interface EnderecoListar {
-    id:string;
+    id?:string;
     rua:string;
     numero:string;
     complemento?: string;

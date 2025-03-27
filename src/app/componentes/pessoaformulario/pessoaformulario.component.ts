@@ -6,13 +6,13 @@ import { CommonModule } from '@angular/common';
 
 
 @Component({
-  selector: 'app-formulario',
+  selector: 'app-pessoaformulario',
   standalone: true,
   imports: [RouterModule, FormsModule, ReactiveFormsModule, CommonModule],
-  templateUrl: './formulario.component.html',
-  styleUrl: './formulario.component.css'
+  templateUrl: './pessoaformulario.component.html',
+  styleUrl: './pessoaformulario.component.css'
 })
-export class FormularioComponent implements OnInit {
+export class PessoaformularioComponent implements OnInit {
   @Input() btnAcao!:string;
   @Input() descTitulo!:string;
   @Input() dadosPessoa: PessoaListar | null = null
@@ -20,15 +20,13 @@ export class FormularioComponent implements OnInit {
 
   pessoaForm!: FormGroup;
 
-// formulario.component.ts
 ngOnInit(): void {
   this.pessoaForm = new FormGroup({
-    id: new FormControl(this.dadosPessoa?.id ?? 0),
+    id: new FormControl(this.dadosPessoa?.id ?? '00000000-0000-0000-0000-000000000000'),
     nome: new FormControl(this.dadosPessoa?.nome ?? ''),
     dataNascimento: new FormControl(this.dadosPessoa?.dataNascimento ?? '')
   });
 }
-  
   submit(){
     this.onSubmit.emit(this.pessoaForm.value);
   }

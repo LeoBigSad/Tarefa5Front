@@ -9,7 +9,7 @@ import { PessoaListar } from '../models/pessoa';
 })
 export class PessoaService {
 
-  ApiURL = environment.UrlAPI;
+  ApiURL = environment.PessoaURL;
 
   constructor(private http : HttpClient) { }
 
