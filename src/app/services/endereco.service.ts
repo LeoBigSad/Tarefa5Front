@@ -13,8 +13,8 @@ export class EnderecoService {
 
   constructor(private http : HttpClient) { }
 
-  GetEnderecos(): Observable<EnderecoListar[]>{
-    return this.http.get<EnderecoListar[]>(this.ApiURL);
+  GetEnderecos(page: number, perPage: number): Observable<EnderecoListar[]> {
+    return this.http.get<EnderecoListar[]>(`${this.ApiURL}/${page}/${perPage}`);
   }
   DeletarEndereco(id: string | undefined): Observable<any> {
     return this.http.delete(`${this.ApiURL}/${id}`, {

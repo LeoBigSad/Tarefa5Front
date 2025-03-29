@@ -13,8 +13,8 @@ export class PessoaService {
 
   constructor(private http : HttpClient) { }
 
-  GetPessoas(): Observable<PessoaListar[]>{
-    return this.http.get<PessoaListar[]>(this.ApiURL);
+  GetPessoas(page: number, perPage: number): Observable<PessoaListar[]>{
+    return this.http.get<PessoaListar[]>(`${this.ApiURL}/${page}/${perPage}`);
   }
   DeletarPessoa(id: string | undefined): Observable<any> {
     return this.http.delete(`${this.ApiURL}/${id}`, {
