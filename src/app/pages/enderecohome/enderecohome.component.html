@@ -2,7 +2,12 @@
     <button class="btn btn-success w-100" [routerLink]="['/enderecocadastro']" routerLinkActive="router-link-active" >Cadastrar novo Endereço</button>
     <div>
         <Label class="form-label">Pesquisar:</Label>
-        <input class="form-control" type="text" placeholder="Qual rua deseja buscar" (input)="search($event)">
+        <input 
+            class="form-control" 
+            type="text" 
+            placeholder="Qual rua deseja buscar" 
+            (input)="search($event)"
+            [value]="searchValue">
     </div>
 
 

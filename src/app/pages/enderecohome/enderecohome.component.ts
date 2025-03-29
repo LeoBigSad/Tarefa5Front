@@ -16,6 +16,7 @@ export class EnderecohomeComponent {
     enderecosGeral: EnderecoListar[] = [];
     currentPage: number = 1;
     itemsPerPage: number = 5;
+    searchValue: string = '';
     
     constructor(private serviceEndereco: EnderecoService) {}
     
@@ -25,20 +26,33 @@ export class EnderecohomeComponent {
 
     loadEnderecos() {
         this.serviceEndereco.GetEnderecos(this.currentPage, this.itemsPerPage)
-            .subscribe(response => {
-                this.enderecos = response;
-                this.enderecosGeral = response;
+        .subscribe(response => {
+            this.enderecos = response;
+            this.enderecosGeral = response;
+            this.applySearch();
+        });
+    }
+
+    search(event: Event) {
+        const target = event.target as HTMLInputElement;
+        this.searchValue = target.value.toLowerCase();
+        this.applySearch();
+    }
+
+    applySearch() {
+        if (this.searchValue) {
+            this.enderecos = this.enderecosGeral.filter(endereco => {
+                return endereco.rua.toLowerCase().includes(this.searchValue);
             });
+        } else {
+            this.enderecos = [...this.enderecosGeral];
+        }
     }
 
     ItemsPerPageChange() {
         if (this.itemsPerPage < 1) {
             this.itemsPerPage = 1;
         }
-        if (this.itemsPerPage > 100) {
-            this.itemsPerPage = 100;
-        }
-        this.currentPage = 1;
         this.loadEnderecos();
     }
 
@@ -54,15 +68,6 @@ export class EnderecohomeComponent {
             this.currentPage++;
             this.loadEnderecos();
         }
-    }
-
-    search(event: Event) {
-        const target = event.target as HTMLInputElement;
-        const value = target.value.toLowerCase();
-        
-        this.enderecos = this.enderecosGeral.filter(endereco => {
-            return endereco.rua.toLowerCase().includes(value);
-        });
     }
 
     deletar(id: string | undefined) {
