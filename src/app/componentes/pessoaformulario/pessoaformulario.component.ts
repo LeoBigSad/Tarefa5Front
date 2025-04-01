@@ -1,8 +1,8 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { PessoaListar } from '../../models/pessoa';
 import { CommonModule } from '@angular/common';
+import { PessoaListar } from '../../models/pessoa';
 
 
 @Component({

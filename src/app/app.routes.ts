@@ -9,6 +9,9 @@ import { EnderecocadastroComponent } from './pages/enderecocadastro/enderecocada
 import { AcademiaeditarComponent } from './pages/academiaeditar/academiaeditar.component';
 import { AcademiacadastroComponent } from './pages/academiacadastro/academiacadastro.component';
 import { AcademiahomeComponent } from './pages/academiahome/academiahome.component';
+import { AparelhohomeComponent } from './pages/aparelhohome/aparelhohome.component';
+import { AparelhocadastroComponent } from './pages/aparelhocadastro/aparelhocadastro.component';
+import { AparelhoeditarComponent } from './pages/aparelhoeditar/aparelhoeditar.component';
 
 export const routes: Routes = [
     {path:'', component: HomeComponent}, 
@@ -21,4 +24,7 @@ export const routes: Routes = [
     {path:'academiaeditar/:id', component: AcademiaeditarComponent}, 
     {path:'academiacadastro', component: AcademiacadastroComponent},
     {path:'academiahome', component: AcademiahomeComponent},
+    {path:'aparelhoeditar/:id', component: AparelhoeditarComponent}, 
+    {path:'aparelhocadastro', component: AparelhocadastroComponent},
+    {path:'aparelhohome', component: AparelhohomeComponent},
 ];
