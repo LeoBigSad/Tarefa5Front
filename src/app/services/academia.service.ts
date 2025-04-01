@@ -9,14 +9,14 @@ import { AcademiaListar } from '../models/academia';
 })
 export class AcademiaService {
 
-  ApiURL = environment.UrlAPI;
+  ApiURL = environment.AcademiaURL;
 
   constructor(private http : HttpClient) { }
 
   GetAcademias(): Observable<AcademiaListar[]>{
     return this.http.get<AcademiaListar[]>(this.ApiURL);
   }
-  DeletarAcademias(id: string | undefined): Observable<any> {
+  DeletarAcademia(id: string | undefined): Observable<any> {
     return this.http.delete(`${this.ApiURL}/${id}`, {
       observe: 'response'
     });

@@ -9,7 +9,7 @@ import { AparelhoListar } from '../models/aparelho';
 })
 export class AparelhoService {
 
-  ApiURL = environment.UrlAPI;
+  ApiURL = environment.AparelhoURL;
 
   constructor(private http : HttpClient) { }
 

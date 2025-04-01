@@ -1,0 +1,8 @@
+<div *ngIf="academia">
+    <app-academiaformulario 
+        [btnAcao]="btnAcao"
+        [descTitulo]="descTitulo"
+        [dadosAcademia]="academia"
+        (onSubmit)="editarAcademia($event)">
+    </app-academiaformulario>
+</div>
